@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, MapPin } from 'lucide-react';
 import axios from 'axios';
 
-const AddPlaceModal = ({ isOpen, onClose, selectedCoords, onPlaceAdded }) => {
+const AddPlaceModal = ({ isOpen, onClose, selectedCoords, onPlaceAdded, onPickOnMap }) => {
   const [formData, setFormData] = useState({
     name: '',
     name_en: '',
@@ -54,8 +54,8 @@ const AddPlaceModal = ({ isOpen, onClose, selectedCoords, onPlaceAdded }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
+    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[2000] flex items-end sm:items-center justify-center sm:p-4">
+      <div className="bg-white w-full sm:max-w-md sm:rounded-2xl rounded-t-3xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-8 sm:slide-in-from-bottom-0 sm:fade-in-0 duration-300">
         <div className="p-4 bg-emerald-700 text-white flex justify-between items-center">
           <h2 className="font-bold text-lg">Add New Place</h2>
           <button onClick={onClose} className="hover:bg-emerald-600 p-1 rounded-full transition-colors">
@@ -63,11 +63,20 @@ const AddPlaceModal = ({ isOpen, onClose, selectedCoords, onPlaceAdded }) => {
           </button>
         </div>
         
-        <form onSubmit={handleSubmit} className="p-5 space-y-4 max-h-[80vh] overflow-y-auto">
+        <form onSubmit={handleSubmit} className="p-5 space-y-4 max-h-[85vh] overflow-y-auto pb-safe">
           
-          <div className="bg-emerald-50 text-emerald-800 p-3 rounded-lg text-sm flex items-start gap-2 border border-emerald-100">
-            <MapPin className="h-5 w-5 flex-shrink-0 text-emerald-600 mt-0.5" />
-            <p>Tip: You can close this, click anywhere on the map, and reopen to auto-fill coordinates!</p>
+          <div className="bg-emerald-50 text-emerald-800 p-4 rounded-xl text-sm flex flex-col gap-3 border border-emerald-100 shadow-sm">
+            <div className="flex items-start gap-2">
+              <MapPin className="h-5 w-5 flex-shrink-0 text-emerald-600 mt-0.5" />
+              <p className="leading-relaxed">Tap the map to automatically fill in the GPS coordinates for this location.</p>
+            </div>
+            <button
+              type="button"
+              onClick={onPickOnMap}
+              className="w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-colors shadow-sm"
+            >
+              Pick on Map
+            </button>
           </div>
 
           <div>

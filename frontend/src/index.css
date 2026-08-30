@@ -7,3 +7,25 @@
     @apply bg-slate-50 text-slate-900;
   }
 }
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Map popup customizations */
+  .leaflet-popup-content-wrapper {
+    @apply rounded-xl shadow-lg border border-slate-100 overflow-hidden;
+  }
+  .leaflet-popup-content {
+    @apply m-0 p-3 min-w-[200px];
+  }
+  
+  .pb-safe {
+    padding-bottom: max(20px, env(safe-area-inset-bottom));
+  }
+}
