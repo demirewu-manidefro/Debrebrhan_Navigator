@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { GoogleGenerativeAI } = require('@google/generative-ai');
-const fs = require('fs');
-const path = require('path');
-
-const dataPath = path.join(__dirname, '../data/places.json');
+const pool = require('../db');
 
 // Initialize Gemini API
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'dummy_key_if_not_set');
@@ -34,16 +31,16 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: 'Message is required' });
     }
 
-    // Read context (places data) to inject into the prompt
+    // Read context (places data) from PostgreSQL
     let placesData = [];
     try {
-      placesData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+      const { rows } = await pool.query('SELECT * FROM places');
+      placesData = rows;
     } catch (err) {
-      console.error('Error reading places.json:', err);
+      console.error('Error reading from db:', err);
     }
 
     // Prepare model
-    // Using gemini-2.5-flash as it is fast and suitable for chat tasks.
     const model = genAI.getGenerativeModel({
       model: "gemini-2.5-flash",
       systemInstruction,

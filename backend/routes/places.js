@@ -1,37 +1,37 @@
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
-const path = require('path');
-
-const dataPath = path.join(__dirname, '../data/places.json');
-
-// Helper to read data
-const getPlaces = () => {
-  const data = fs.readFileSync(dataPath, 'utf8');
-  return JSON.parse(data);
-};
+const pool = require('../db');
 
 // GET all places, with optional query filters
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    let places = getPlaces();
     const { category, search, kebele } = req.query;
 
+    let query = 'SELECT * FROM places WHERE 1=1';
+    let params = [];
+    let paramIndex = 1;
+
     if (category) {
-      places = places.filter(p => p.category === category);
+      query += ` AND category = $${paramIndex}`;
+      params.push(category);
+      paramIndex++;
     }
     
     if (kebele) {
-      places = places.filter(p => p.kebele === kebele);
+      query += ` AND kebele = $${paramIndex}`;
+      params.push(kebele);
+      paramIndex++;
     }
     
     if (search) {
-      const q = search.toLowerCase();
-      places = places.filter(p => 
-        p.name.toLowerCase().includes(q) || 
-        p.name_en.toLowerCase().includes(q)
-      );
+      query += ` AND (LOWER(name) LIKE $${paramIndex} OR LOWER(name_en) LIKE $${paramIndex})`;
+      params.push(`%${search.toLowerCase()}%`);
+      paramIndex++;
     }
+
+    const { rows } = await pool.query(query, params);
+    // Cast numeric types for JS compatibility
+    const places = rows.map(r => ({ ...r, lat: parseFloat(r.lat), lng: parseFloat(r.lng) }));
 
     res.json(places);
   } catch (error) {
@@ -41,7 +41,7 @@ router.get('/', (req, res) => {
 });
 
 // POST a new place
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const { name, name_en, category, kebele, lat, lng, landmark, phone } = req.body;
     
@@ -49,21 +49,30 @@ router.post('/', (req, res) => {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    const places = getPlaces();
-    const newPlace = {
-      id: `db_${Date.now()}`,
-      name,
-      name_en: name_en || '',
-      category,
-      kebele: kebele || '',
-      lat: parseFloat(lat),
-      lng: parseFloat(lng),
-      landmark: landmark || '',
-      phone: phone || ''
-    };
+    const newId = `db_${Date.now()}`;
+    const insertQuery = `
+      INSERT INTO places (id, name, name_en, category, kebele, lat, lng, landmark, phone)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      RETURNING *;
+    `;
+    
+    const values = [
+      newId, 
+      name, 
+      name_en || '', 
+      category, 
+      kebele || '', 
+      parseFloat(lat), 
+      parseFloat(lng), 
+      landmark || '', 
+      phone || ''
+    ];
 
-    places.push(newPlace);
-    fs.writeFileSync(dataPath, JSON.stringify(places, null, 2), 'utf8');
+    const { rows } = await pool.query(insertQuery, values);
+    
+    const newPlace = rows[0];
+    newPlace.lat = parseFloat(newPlace.lat);
+    newPlace.lng = parseFloat(newPlace.lng);
 
     res.status(201).json(newPlace);
   } catch (error) {
