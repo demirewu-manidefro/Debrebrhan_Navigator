@@ -29,7 +29,7 @@ const AutoPan = ({ targetCoords }) => {
   const map = useMap();
   useEffect(() => {
     if (targetCoords) {
-      map.flyTo([targetCoords.lat, targetCoords.lng], 16, { animate: true, duration: 1.5 });
+      map.flyTo([targetCoords.lat, targetCoords.lng], 18, { animate: true, duration: 1.5 });
     }
   }, [targetCoords, map]);
   return null;
@@ -57,10 +57,12 @@ const MapView = ({ places, targetCoords, onMapClick }) => {
 
   return (
     <div className="h-full w-full relative z-0">
-      <MapContainer center={center} zoom={14} className="h-full w-full" zoomControl={false}>
+      <MapContainer center={center} zoom={17} maxZoom={24} className="h-full w-full" zoomControl={false}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; Google Maps'
+          url="https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}"
+          maxZoom={24}
+          maxNativeZoom={20}
         />
         
         {/* Controls */}
