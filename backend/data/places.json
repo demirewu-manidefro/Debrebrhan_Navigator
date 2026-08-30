@@ -36,7 +36,7 @@
     "category": "factory",
     "kebele": "01",
     "lat": 9.7125,
-    "lng": 39.5480,
+    "lng": 39.548,
     "landmark": "ወደ ደሴ መውጫ መንገድ ዳር"
   },
   {
@@ -45,8 +45,8 @@
     "name_en": "Debre Berhan Industrial Park",
     "category": "industry",
     "kebele": "01",
-    "lat": 9.7050,
-    "lng": 39.5420,
+    "lat": 9.705,
+    "lng": 39.542,
     "landmark": "የከተማዋ መውጫ ዞን"
   },
   {
@@ -55,8 +55,8 @@
     "name_en": "Debre Berhan Selassie Church",
     "category": "church",
     "kebele": "03",
-    "lat": 9.6850,
-    "lng": 39.5280,
+    "lat": 9.685,
+    "lng": 39.528,
     "landmark": "ታሪካዊው የአጼ ዘርአ ያዕቆብ ስፍራ"
   },
   {
@@ -65,8 +65,8 @@
     "name_en": "Eva Hotel",
     "category": "hotel",
     "kebele": "04",
-    "lat": 9.6790,
-    "lng": 39.5320,
+    "lat": 9.679,
+    "lng": 39.532,
     "landmark": "መሃል ከተማ አካባቢ"
   },
   {
@@ -75,7 +75,7 @@
     "name_en": "Francophone Hotel",
     "category": "hotel",
     "kebele": "04",
-    "lat": 9.6760,
+    "lat": 9.676,
     "lng": 39.5335,
     "landmark": "መሃል ከተማ"
   },
@@ -85,7 +85,7 @@
     "name_en": "Tebarek Hospital",
     "category": "health",
     "kebele": "04",
-    "lat": 9.6780,
+    "lat": 9.678,
     "lng": 39.5305,
     "landmark": "ከዋናው መንገድ ቅርብ"
   },
@@ -95,8 +95,8 @@
     "name_en": "Dashen Brewery Debre Berhan",
     "category": "factory",
     "kebele": "01",
-    "lat": 9.7150,
-    "lng": 39.5500,
+    "lat": 9.715,
+    "lng": 39.55,
     "landmark": "የኢንዱስትሪ መንደር"
   },
   {
@@ -105,8 +105,8 @@
     "name_en": "Debre Berhan Prison",
     "category": "public",
     "kebele": "08",
-    "lat": 9.6720,
-    "lng": 39.5310,
+    "lat": 9.672,
+    "lng": 39.531,
     "landmark": "ከመሃል ከተማ ወጣ ብሎ"
   },
   {
@@ -118,5 +118,475 @@
     "lat": 9.6785,
     "lng": 39.5328,
     "landmark": "የዞኑ መስተዳድር ጽ/ቤት አካባቢ"
+  },
+  {
+    "id": "osm_1150618222",
+    "name": "Tsgereda Hotel",
+    "name_en": "Tsgereda Hotel",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.68374,
+    "lng": 39.54102,
+    "landmark": "OSM: motel"
+  },
+  {
+    "id": "osm_1150618223",
+    "name": "Akalu Hotel",
+    "name_en": "Akalu Hotel",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.67662,
+    "lng": 39.53602,
+    "landmark": "OSM: motel"
+  },
+  {
+    "id": "osm_1275584039",
+    "name": "Oilibya",
+    "name_en": "Oilibya",
+    "category": "transport",
+    "kebele": "",
+    "lat": 9.6809292,
+    "lng": 39.5403294,
+    "landmark": "OSM: fuel"
+  },
+  {
+    "id": "osm_4741022030",
+    "name": "Awash International Bank Debre Birhan Branch",
+    "name_en": "Awash International Bank Debre Birhan Branch",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6806899,
+    "lng": 39.5383536,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_4741022031",
+    "name": "Noc Gas Station",
+    "name_en": "Noc Gas Station",
+    "category": "transport",
+    "kebele": "",
+    "lat": 9.6849476,
+    "lng": 39.5454069,
+    "landmark": "OSM: fuel"
+  },
+  {
+    "id": "osm_4769050124",
+    "name": "Getva Hotel",
+    "name_en": "Getva Hotel",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6720227,
+    "lng": 39.5288415,
+    "landmark": "OSM: hotel"
+  },
+  {
+    "id": "osm_5182053582",
+    "name": "Commercial Bank of Ethiopia",
+    "name_en": "Commercial Bank of Ethiopia",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6802038,
+    "lng": 39.5377038,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_5182053583",
+    "name": "Mikyas Hotel",
+    "name_en": "Mikyas Hotel",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6790712,
+    "lng": 39.5337951,
+    "landmark": "OSM: hotel"
+  },
+  {
+    "id": "osm_5182053585",
+    "name": "Was",
+    "name_en": "Was",
+    "category": "transport",
+    "kebele": "",
+    "lat": 9.6489877,
+    "lng": 39.5116152,
+    "landmark": "OSM: fuel"
+  },
+  {
+    "id": "osm_5182057687",
+    "name": "Berhan International Bank",
+    "name_en": "Berhan International Bank",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6800576,
+    "lng": 39.5361058,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_5182057896",
+    "name": "Helen Hotel",
+    "name_en": "Helen Hotel",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6841426,
+    "lng": 39.5413016,
+    "landmark": "OSM: hotel"
+  },
+  {
+    "id": "osm_5182057897",
+    "name": "Bank of Abyssinia",
+    "name_en": "Bank of Abyssinia",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6799421,
+    "lng": 39.5366428,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_5182057898",
+    "name": "Dashen Bank",
+    "name_en": "Dashen Bank",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6760771,
+    "lng": 39.5310929,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_5182057899",
+    "name": "College of Teachers Education",
+    "name_en": "College of Teachers Education",
+    "category": "education",
+    "kebele": "",
+    "lat": 9.6694365,
+    "lng": 39.5220251,
+    "landmark": "OSM: college"
+  },
+  {
+    "id": "osm_6400046585",
+    "name": "ባሶ ሁለተኛ ደረጃ ትምህርት ቤት",
+    "name_en": "baso high school",
+    "category": "education",
+    "kebele": "",
+    "lat": 9.6618392,
+    "lng": 39.5179296,
+    "landmark": "OSM: school"
+  },
+  {
+    "id": "osm_6412417491",
+    "name": "ሸገር ሀውስ ክለብ እና የባህል ምሽት",
+    "name_en": "Sheger Club and Traditional House",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6816268,
+    "lng": 39.540673,
+    "landmark": "OSM: nightclub"
+  },
+  {
+    "id": "osm_6412422786",
+    "name": "ኩክ የለሽ ማርያም መግቢያ መንገድ",
+    "name_en": "Kuk Yelesh Mariam Street",
+    "category": "transport",
+    "kebele": "",
+    "lat": 9.6952155,
+    "lng": 39.5576952,
+    "landmark": "OSM: bus_station"
+  },
+  {
+    "id": "osm_6412423300",
+    "name": "ናይስ ቁርጥ ቤት",
+    "name_en": "Nice Qurt Bet",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6814268,
+    "lng": 39.540371,
+    "landmark": "OSM: restaurant"
+  },
+  {
+    "id": "osm_6524268288",
+    "name": "Police station",
+    "name_en": "Police station",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6671374,
+    "lng": 39.5280703,
+    "landmark": "OSM: police"
+  },
+  {
+    "id": "osm_6547833085",
+    "name": "MAM",
+    "name_en": "MAM",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6671773,
+    "lng": 39.52658,
+    "landmark": "OSM: apartment"
+  },
+  {
+    "id": "osm_6547833185",
+    "name": "04 kebele Adebabay",
+    "name_en": "04 kebele Adebabay",
+    "category": "shop",
+    "kebele": "",
+    "lat": 9.6671629,
+    "lng": 39.5271845,
+    "landmark": "OSM: supermarket"
+  },
+  {
+    "id": "osm_6547833685",
+    "name": "Kebele 03 Adebabay",
+    "name_en": "Kebele 03 Adebabay",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6721925,
+    "lng": 39.5296872,
+    "landmark": "OSM: viewpoint"
+  },
+  {
+    "id": "osm_6634125186",
+    "name": "Amex",
+    "name_en": "Amex",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6802104,
+    "lng": 39.5376908,
+    "landmark": "OSM: guest_house"
+  },
+  {
+    "id": "osm_6709376785",
+    "name": "Church",
+    "name_en": "Church",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.670315,
+    "lng": 39.531835,
+    "landmark": "OSM: community_centre"
+  },
+  {
+    "id": "osm_6709376786",
+    "name": "Kinfe",
+    "name_en": "Kinfe",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6629717,
+    "lng": 39.53372,
+    "landmark": "OSM: apartment"
+  },
+  {
+    "id": "osm_6709376985",
+    "name": "010",
+    "name_en": "010",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6674304,
+    "lng": 39.5315493,
+    "landmark": "OSM: cafe"
+  },
+  {
+    "id": "osm_8490929292",
+    "name": "Medhaniaylem Ethiopian Orthodox Church",
+    "name_en": "Medhaniaylem Ethiopian Orthodox Church",
+    "category": "church",
+    "kebele": "",
+    "lat": 9.6512407,
+    "lng": 39.5171504,
+    "landmark": "OSM: place_of_worship"
+  },
+  {
+    "id": "osm_8591795418",
+    "name": "ያሬድ ካፌ Debre Brhan",
+    "name_en": "Yared Cafe ያሬድ ካፌ Debre Brhan",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6789494,
+    "lng": 39.5336022,
+    "landmark": "OSM: cafe"
+  },
+  {
+    "id": "osm_8888300517",
+    "name": "ዳሽን ቢራ",
+    "name_en": "Dashen Breweries",
+    "category": "shop",
+    "kebele": "",
+    "lat": 9.6369303,
+    "lng": 39.503384,
+    "landmark": "OSM: beverages"
+  },
+  {
+    "id": "osm_8888300717",
+    "name": "ደብረ ብርሃን ፖሊስ ጣቢያ",
+    "name_en": "Debre Birhan Police Station",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6872342,
+    "lng": 39.544819,
+    "landmark": "OSM: police"
+  },
+  {
+    "id": "osm_8921669118",
+    "name": "መንገሻ አዳኝ",
+    "name_en": "Mengesha Adagn",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6642838,
+    "lng": 39.5337251,
+    "landmark": "OSM: apartment"
+  },
+  {
+    "id": "osm_9645227917",
+    "name": "ደብረ ብርሀን  Debre Brihan",
+    "name_en": "ደብረ ብርሀን  Debre Brihan",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6770775,
+    "lng": 39.5288596,
+    "landmark": "OSM: attraction"
+  },
+  {
+    "id": "osm_10136028517",
+    "name": "ደ/ብርሀን ኢድ አደባባይ",
+    "name_en": "Debrebirhan Eid Street",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6725991,
+    "lng": 39.5268504,
+    "landmark": "OSM: attraction"
+  },
+  {
+    "id": "osm_10773546705",
+    "name": "Beran Bank Atse Zerayaob Branch",
+    "name_en": "Beran Bank Atse Zerayaob Branch",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6818404,
+    "lng": 39.5373791,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_10866943706",
+    "name": "Tsehay Bank Debre Birhan Branch",
+    "name_en": "Tsehay Bank Debre Birhan Branch",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6805198,
+    "lng": 39.5390284,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_11299276272",
+    "name": "Ahadu Bank Debre Birhan Branch",
+    "name_en": "Ahadu Bank Debre Birhan Branch",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6827428,
+    "lng": 39.5409307,
+    "landmark": "OSM: bank"
+  },
+  {
+    "id": "osm_11299281769",
+    "name": "Kuk Yelesh Kidist Mariam Gedam",
+    "name_en": "Kuk Yelesh Kidist Mariam Gedam",
+    "category": "church",
+    "kebele": "",
+    "lat": 9.727969,
+    "lng": 39.5664393,
+    "landmark": "OSM: place_of_worship"
+  },
+  {
+    "id": "osm_11411547169",
+    "name": "king",
+    "name_en": "king",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6663676,
+    "lng": 39.5179876,
+    "landmark": "OSM: restaurant"
+  },
+  {
+    "id": "osm_12155990852",
+    "name": "Millennium Academy",
+    "name_en": "Millennium Academy",
+    "category": "education",
+    "kebele": "",
+    "lat": 9.6656576,
+    "lng": 39.5249106,
+    "landmark": "OSM: school"
+  },
+  {
+    "id": "osm_12156007842",
+    "name": "Debirebirhan university prof. Asrat Health campus",
+    "name_en": "Debirebirhan university prof. Asrat Health campus",
+    "category": "education",
+    "kebele": "",
+    "lat": 9.668978,
+    "lng": 39.5317615,
+    "landmark": "OSM: university"
+  },
+  {
+    "id": "osm_12158487491",
+    "name": "ደብረ ጽባኅ ቅዱስ ጊዮርጊስ ቤተ ክርስቲያን",
+    "name_en": "ደብረ ጽባኅ ቅዱስ ጊዮርጊስ ቤተ ክርስቲያን",
+    "category": "church",
+    "kebele": "",
+    "lat": 9.6878367,
+    "lng": 39.5378326,
+    "landmark": "OSM: place_of_worship"
+  },
+  {
+    "id": "osm_12160590170",
+    "name": "Debre Birhan Bus Station (ደብረ ብርሃን መናኸሪያ)",
+    "name_en": "Debre Birhan Bus Station (ደብረ ብርሃን መናኸሪያ)",
+    "category": "transport",
+    "kebele": "",
+    "lat": 9.6849464,
+    "lng": 39.5441535,
+    "landmark": "OSM: bus_station"
+  },
+  {
+    "id": "osm_12160606490",
+    "name": "Emperor zara yaqob statue",
+    "name_en": "Emperor zara yaqob statue",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6782203,
+    "lng": 39.5330536,
+    "landmark": "OSM: artwork"
+  },
+  {
+    "id": "osm_12160609297",
+    "name": "Dlight",
+    "name_en": "Dlight",
+    "category": "public",
+    "kebele": "",
+    "lat": 9.6690561,
+    "lng": 39.5240012,
+    "landmark": "OSM: community_centre"
+  },
+  {
+    "id": "osm_12160651578",
+    "name": "Hiwot Hotel",
+    "name_en": "Hiwot Hotel",
+    "category": "hotel",
+    "kebele": "",
+    "lat": 9.6781753,
+    "lng": 39.5325445,
+    "landmark": "OSM: hotel"
+  },
+  {
+    "id": "osm_12244950232",
+    "name": "Ansas Kidist Mariam Church",
+    "name_en": "Ansas Kidist Mariam Church",
+    "category": "church",
+    "kebele": "",
+    "lat": 9.6688865,
+    "lng": 39.5403974,
+    "landmark": "OSM: place_of_worship"
+  },
+  {
+    "id": "osm_12244980452",
+    "name": "Debre Birhan Secondary School",
+    "name_en": "Debre Birhan Secondary School",
+    "category": "education",
+    "kebele": "",
+    "lat": 9.6755394,
+    "lng": 39.5453377,
+    "landmark": "OSM: school"
   }
 ]
