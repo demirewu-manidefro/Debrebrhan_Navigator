@@ -20,7 +20,8 @@ function App() {
       const params = {};
       if (searchQuery) params.search = searchQuery;
       
-      const res = await axios.get('http://localhost:5000/api/places', { params });
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const res = await axios.get(`${apiUrl}/places`, { params });
       setPlaces(res.data);
     } catch (error) {
       console.error("Error fetching places", error);

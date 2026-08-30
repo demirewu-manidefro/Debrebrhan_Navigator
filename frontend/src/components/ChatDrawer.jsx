@@ -45,7 +45,8 @@ const ChatDrawer = ({ onNavigateToPlace }) => {
     setIsLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/chat', { message: userMessage });
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const res = await axios.post(`${apiUrl}/chat`, { message: userMessage });
       const fullText = res.data.reply;
       
       const extractedData = extractJsonFromMarkdown(fullText);

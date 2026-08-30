@@ -37,7 +37,8 @@ const AddPlaceModal = ({ isOpen, onClose, selectedCoords, onPlaceAdded, onPickOn
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await axios.post('http://localhost:5000/api/places', formData);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      await axios.post(`${apiUrl}/places`, formData);
       onPlaceAdded();
       onClose();
       // Reset form
