@@ -1,0 +1,122 @@
+[
+  {
+    "id": "db_01",
+    "name": "ደብረ ብርሃን ዩኒቨርሲቲ (ዋናው ግቢ)",
+    "name_en": "Debre Berhan University Main Campus",
+    "category": "education",
+    "kebele": "09",
+    "lat": 9.6833,
+    "lng": 39.5167,
+    "landmark": "ቀበሌ 09፣ ወደ አንኮበር መታጠፊያ ሳይደርስ"
+  },
+  {
+    "id": "db_02",
+    "name": "ደብረ ብርሃን አጠቃላይ ሪፈራል ሆስፒታል",
+    "name_en": "Debre Berhan Comprehensive Specialized Hospital",
+    "category": "health",
+    "kebele": "04",
+    "lat": 9.6775,
+    "lng": 39.5312,
+    "landmark": "መሃል ከተማ፣ ዋናው አስፋልት ዳር"
+  },
+  {
+    "id": "db_03",
+    "name": "ደብረ ብርሃን አውቶቡስ መናኸሪያ",
+    "name_en": "Debre Berhan Bus Station",
+    "category": "transport",
+    "kebele": "02",
+    "lat": 9.6732,
+    "lng": 39.5348,
+    "landmark": "A2 ዋና አውራ ጎዳና ዳር"
+  },
+  {
+    "id": "db_04",
+    "name": "ሀበሻ ቢራ ፋብሪካ",
+    "name_en": "Habesha Breweries",
+    "category": "factory",
+    "kebele": "01",
+    "lat": 9.7125,
+    "lng": 39.5480,
+    "landmark": "ወደ ደሴ መውጫ መንገድ ዳር"
+  },
+  {
+    "id": "db_05",
+    "name": "ደብረ ብርሃን ኢንዱስትሪ ፓርክ",
+    "name_en": "Debre Berhan Industrial Park",
+    "category": "industry",
+    "kebele": "01",
+    "lat": 9.7050,
+    "lng": 39.5420,
+    "landmark": "የከተማዋ መውጫ ዞን"
+  },
+  {
+    "id": "db_06",
+    "name": "ደብረ ብርሃን ቅድስት ሥላሴ ቤተክርስቲያን",
+    "name_en": "Debre Berhan Selassie Church",
+    "category": "church",
+    "kebele": "03",
+    "lat": 9.6850,
+    "lng": 39.5280,
+    "landmark": "ታሪካዊው የአጼ ዘርአ ያዕቆብ ስፍራ"
+  },
+  {
+    "id": "db_07",
+    "name": "ኤቫ ሆቴል",
+    "name_en": "Eva Hotel",
+    "category": "hotel",
+    "kebele": "04",
+    "lat": 9.6790,
+    "lng": 39.5320,
+    "landmark": "መሃል ከተማ አካባቢ"
+  },
+  {
+    "id": "db_08",
+    "name": "ፍራንኮፎን ሆቴል",
+    "name_en": "Francophone Hotel",
+    "category": "hotel",
+    "kebele": "04",
+    "lat": 9.6760,
+    "lng": 39.5335,
+    "landmark": "መሃል ከተማ"
+  },
+  {
+    "id": "db_09",
+    "name": "ተባረክ ሆስፒታል",
+    "name_en": "Tebarek Hospital",
+    "category": "health",
+    "kebele": "04",
+    "lat": 9.6780,
+    "lng": 39.5305,
+    "landmark": "ከዋናው መንገድ ቅርብ"
+  },
+  {
+    "id": "db_10",
+    "name": "ዳሽን ቢራ ፋብሪካ",
+    "name_en": "Dashen Brewery Debre Berhan",
+    "category": "factory",
+    "kebele": "01",
+    "lat": 9.7150,
+    "lng": 39.5500,
+    "landmark": "የኢንዱስትሪ መንደር"
+  },
+  {
+    "id": "db_11",
+    "name": "ደብረ ብርሃን ማረሚያ ቤት",
+    "name_en": "Debre Berhan Prison",
+    "category": "public",
+    "kebele": "08",
+    "lat": 9.6720,
+    "lng": 39.5310,
+    "landmark": "ከመሃል ከተማ ወጣ ብሎ"
+  },
+  {
+    "id": "db_12",
+    "name": "ደብረ ብርሃን ከተማ ማዘጋጃ ቤት",
+    "name_en": "Debre Berhan Municipality Office",
+    "category": "government",
+    "kebele": "04",
+    "lat": 9.6785,
+    "lng": 39.5328,
+    "landmark": "የዞኑ መስተዳድር ጽ/ቤት አካባቢ"
+  }
+]
