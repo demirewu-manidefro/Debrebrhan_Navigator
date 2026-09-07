@@ -12,9 +12,10 @@ import {
   GraduationCap, 
   Landmark, 
   Bus,
-  MapPin 
+  MapPin,
+  Calendar
 } from 'lucide-react';
-
+import RoutingMachine from './RoutingMachine';
 
 // Custom icon generator based on category
 const createCustomIcon = (category, isTargeted = false) => {
@@ -23,25 +24,21 @@ const createCustomIcon = (category, isTargeted = false) => {
 
   if (category === 'health') {
     bgColor = '#EF4444'; // Red
-    IconComponent = Stethoscope;
   } else if (category === 'hotel') {
     bgColor = '#F59E0B'; // Amber
-    IconComponent = Bed;
   } else if (category === 'factory' || category === 'industry') {
     bgColor = '#475569'; // Slate
-    IconComponent = Factory;
   } else if (category === 'education') {
     bgColor = '#3B82F6'; // Blue
-    IconComponent = GraduationCap;
   } else if (category === 'church' || category === 'religion') {
     bgColor = '#10B981'; // Emerald
-    IconComponent = Landmark; // Church-like
   } else if (category === 'transport') {
     bgColor = '#8B5CF6'; // Purple
-    IconComponent = Bus;
   } else if (category === 'government' || category === 'public') {
     bgColor = '#6366F1'; // Indigo
-    IconComponent = Landmark;
+  } else if (category === 'event') {
+    bgColor = '#EC4899'; // Pink for events
+    IconComponent = Calendar;
   }
 
   // Ring effect for targeted
@@ -72,26 +69,13 @@ const defaultIcon = new L.Icon({
 });
 
 // Component to handle auto-panning and popup opening
-const AutoPan = ({ targetCoords, markerRefs, places }) => {
+const AutoPan = ({ targetCoords }) => {
   const map = useMap();
   useEffect(() => {
     if (targetCoords) {
       map.flyTo([targetCoords.lat, targetCoords.lng], 18, { animate: true, duration: 1.5 });
-      
-      // Find the exact place to open its popup
-      const place = places.find(p => 
-        Math.abs(p.lat - targetCoords.lat) < 0.0001 && 
-        Math.abs(p.lng - targetCoords.lng) < 0.0001
-      );
-
-      if (place && markerRefs.current[place.id]) {
-        // slight delay to let flyTo start before opening popup
-        setTimeout(() => {
-          markerRefs.current[place.id].openPopup();
-        }, 300);
-      }
     }
-  }, [targetCoords, map, markerRefs, places]);
+  }, [targetCoords, map]);
   return null;
 };
 
@@ -111,7 +95,7 @@ const MapClickHandler = ({ onMapClick }) => {
   return null;
 };
 
-const MapView = ({ places, targetCoords, onMapClick, isPickMode, selectedCoords }) => {
+const MapView = ({ places, events = [], targetCoords, onMapClick, isPickMode, selectedCoords, onPlaceClick, routingTarget, userLocation }) => {
   const center = [9.6795, 39.5325];
   const markerRefs = useRef({});
 
@@ -132,8 +116,9 @@ const MapView = ({ places, targetCoords, onMapClick, isPickMode, selectedCoords 
         />
         
         {/* Controls */}
-        <AutoPan targetCoords={targetCoords} markerRefs={markerRefs} places={places} />
+        <AutoPan targetCoords={targetCoords} />
         <MapClickHandler onMapClick={onMapClick} />
+        <RoutingMachine startCoords={userLocation} endCoords={routingTarget} />
 
         {/* Temporary Selected Marker in Pick Mode */}
         {selectedCoords && (
@@ -141,6 +126,26 @@ const MapView = ({ places, targetCoords, onMapClick, isPickMode, selectedCoords 
              <Popup>Selected Location</Popup>
           </Marker>
         )}
+
+        {/* Event Markers */}
+        {events.map((event) => (
+          <Marker 
+            key={`event-${event.id}`} 
+            position={[event.lat, event.lng]}
+            icon={createCustomIcon('event')}
+          >
+            <Popup className="custom-popup">
+              <div className="p-2">
+                <h3 className="font-bold text-lg mb-1 text-pink-600">{event.title}</h3>
+                <p className="text-sm text-slate-700 mb-2">{event.description}</p>
+                <div className="text-xs text-slate-500 bg-slate-50 p-2 rounded">
+                  <span className="font-semibold block mb-1">Dates:</span>
+                  {new Date(event.start_date).toLocaleDateString()} - {new Date(event.end_date).toLocaleDateString()}
+                </div>
+              </div>
+            </Popup>
+          </Marker>
+        ))}
 
         {/* Markers clustered */}
         <MarkerClusterGroup chunkedLoading maxClusterRadius={40}>
@@ -155,36 +160,14 @@ const MapView = ({ places, targetCoords, onMapClick, isPickMode, selectedCoords 
                 position={[place.lat, place.lng]}
                 icon={createCustomIcon(place.category, isTargeted)}
                 ref={(r) => markerRefs.current[place.id] = r}
+                eventHandlers={{
+                  click: () => {
+                    if (onPlaceClick) {
+                      onPlaceClick(place);
+                    }
+                  },
+                }}
               >
-                <Popup className="custom-popup">
-                  <div className="p-1">
-                    <h3 className="font-bold text-lg mb-1">{place.name}</h3>
-                    <h4 className="text-sm text-slate-500 mb-2">{place.name_en}</h4>
-                    
-                    <div className="flex gap-2 mb-3">
-                      <span className="px-2 py-1 bg-emerald-100 text-emerald-800 text-xs rounded-full uppercase tracking-wider font-semibold">
-                        {place.category}
-                      </span>
-                      <span className="px-2 py-1 bg-slate-100 text-slate-800 text-xs rounded-full">
-                        Kebele {place.kebele}
-                      </span>
-                    </div>
-
-                    <p className="text-sm text-slate-700 mb-3 border-l-2 border-emerald-400 pl-2">
-                      {place.landmark}
-                    </p>
-
-                    <a
-                      href={`https://www.google.com/maps/dir/?api=1&destination=${place.lat},${place.lng}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700 transition-colors text-sm font-medium"
-                    >
-                      <Navigation className="h-4 w-4" />
-                      Navigate Here
-                    </a>
-                  </div>
-                </Popup>
               </Marker>
             );
           })}
