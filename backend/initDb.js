@@ -53,8 +53,35 @@ const run = async () => {
         landmark VARCHAR(255),
         phone VARCHAR(50)
       );
+      
+      CREATE TABLE IF NOT EXISTS reviews (
+        id SERIAL PRIMARY KEY,
+        place_id VARCHAR(50) REFERENCES places(id) ON DELETE CASCADE,
+        rating INTEGER CHECK (rating >= 1 AND rating <= 5),
+        comment TEXT,
+        author_name VARCHAR(100),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS photos (
+        id SERIAL PRIMARY KEY,
+        place_id VARCHAR(50) REFERENCES places(id) ON DELETE CASCADE,
+        image_url TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS events (
+        id SERIAL PRIMARY KEY,
+        title VARCHAR(255) NOT NULL,
+        description TEXT,
+        lat DECIMAL(10, 6) NOT NULL,
+        lng DECIMAL(10, 6) NOT NULL,
+        start_date TIMESTAMP NOT NULL,
+        end_date TIMESTAMP NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
     `);
-    console.log('Table "places" verified/created.');
+    console.log('Tables "places", "reviews", "photos", and "events" verified/created.');
 
     // Seed data from JSON
     const data = JSON.parse(fs.readFileSync('./data/places.json', 'utf8'));
