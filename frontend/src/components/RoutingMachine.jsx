@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
+import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
 import 'leaflet-routing-machine';
+
+// Fix for leaflet-routing-machine in Vite/React
+window.L = L;
 
 const RoutingMachine = ({ startCoords, endCoords }) => {
   const map = useMap();
