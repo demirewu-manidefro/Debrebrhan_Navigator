@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Search, MapPin, Navigation } from 'lucide-react';
+import { Search, MapPin, Navigation, Moon, Sun } from 'lucide-react';
+import { useTheme } from '../context/ThemeContext';
 
 const Navbar = ({ searchQuery, onSearch, places, onPlaceSelect }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const searchRef = useRef(null);
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -27,7 +29,7 @@ const Navbar = ({ searchQuery, onSearch, places, onPlaceSelect }) => {
   };
 
   return (
-    <nav className="bg-emerald-700 text-white shadow-lg sticky top-0 z-[2000] pt-[max(env(safe-area-inset-top),0.5rem)]">
+    <nav className="bg-emerald-700 dark:bg-emerald-900 text-white shadow-lg sticky top-0 z-[2000] pt-[max(env(safe-area-inset-top),0.5rem)] transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center space-x-2">
@@ -87,12 +89,20 @@ const Navbar = ({ searchQuery, onSearch, places, onPlaceSelect }) => {
               
               {/* No results state */}
               {isDropdownOpen && searchQuery && places.length === 0 && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-md shadow-lg p-4 text-center text-slate-500 text-sm border border-slate-200">
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-slate-800 rounded-md shadow-lg p-4 text-center text-slate-500 dark:text-slate-400 text-sm border border-slate-200 dark:border-slate-700">
                   No places found. Try a different search.
                 </div>
               )}
             </div>
           </div>
+          
+          <button 
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full hover:bg-emerald-600 dark:hover:bg-emerald-800 transition-colors ml-2"
+            title="Toggle Dark Mode"
+          >
+            {isDarkMode ? <Sun className="h-5 w-5 text-emerald-100" /> : <Moon className="h-5 w-5 text-emerald-100" />}
+          </button>
         </div>
       </div>
     </nav>
