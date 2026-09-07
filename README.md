@@ -1,103 +1,170 @@
 # 📍 Debre Berhan Navigator
 
-![Debre Berhan Navigator](https://img.shields.io/badge/Status-Active-success) ![React](https://img.shields.io/badge/React-19.2-blue) ![Node.js](https://img.shields.io/badge/Node.js-Express-green) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+<p align="center">
+  <strong>An AI-Powered Smart Navigation & Local Discovery Platform for Debre Berhan City</strong>
+</p>
 
-A modern, AI-powered interactive map application designed for exploring **Debre Berhan City**. This platform makes it incredibly easy to find essential places (hospitals, schools, hotels, government offices), navigate to them, and interact with an integrated Amharic AI assistant for smart, localized queries.
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=white" alt="React">
+  <img src="https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL">
+</p>
 
-## ✨ Key Features
+<p align="center">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Leaflet-Maps-199900?style=for-the-badge&logo=leaflet&logoColor=white" alt="Leaflet">
+  <img src="https://img.shields.io/badge/Gemini-AI-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini AI">
+  <img src="https://img.shields.io/badge/PWA-Enabled-5A0FC8?style=for-the-badge" alt="PWA">
+</p>
 
-- 🗺️ **Interactive Map**: Search and filter places by category, name, or Kebele using a smooth, clustered map interface.
-- 🤖 **Amharic AI Assistant**: An integrated chat drawer powered by the Gemini API that understands and responds in Amharic, helping you find places dynamically.
-- 📍 **Native Routing**: Get real-time directions! The app uses your current geolocation to draw a path directly to your selected destination using `leaflet-routing-machine`.
-- ⭐ **Reviews & Ratings**: Users can leave 1-5 star ratings and comments on any place.
-- 📸 **Photos**: View and attach image URLs to showcase places.
-- 🎉 **Local Events**: Keep track of local happenings with specialized pink calendar markers mapping out ongoing and upcoming events.
-- 📶 **Offline Support (PWA)**: Install the web app on your phone or desktop. The app caches static assets via Service Workers to ensure it loads even with poor connectivity.
-- 🌙 **Dark Mode**: A beautifully crafted dark theme for comfortable night-time browsing, saving your preference locally.
+---
 
-## 🛠️ Tech Stack
+## 📖 Overview
+
+**Debre Berhan Navigator** is a modern, AI-powered interactive map platform built specifically for **Debre Berhan City, Ethiopia**.
+
+The application helps residents and visitors easily discover important places, search for locations, get directions, explore local events, read and submit reviews, and communicate with an **Amharic-speaking AI assistant**.
+
+The project combines **React, Node.js, PostgreSQL, geospatial mapping, routing, PWA technology, and Generative AI** to create a localized digital navigation experience.
+
+---
+
+## 📸 Application Preview
+
+<p align="center">
+  <img 
+    src="docs/screenshots/debre-berhan-navigator.png" 
+    alt="Debre Berhan Navigator Application Screenshot"
+    width="900"
+  />
+</p>
+
+<p align="center">
+  <i>Debre Berhan Navigator — Interactive Map Interface</i>
+</p>
+
+---
+
+## ✨ Features
+
+### 🗺️ Interactive Map
+
+- Interactive map of Debre Berhan City
+- Search places by name
+- Filter places by category
+- Filter locations by Kebele
+- Marker clustering for better map performance
+- Detailed location information
+
+### 🤖 Amharic AI Assistant
+
+- AI-powered conversational assistant
+- Supports **Amharic language**
+- Natural-language place discovery
+- Helps users find relevant locations
+- Powered by **Google Gemini API**
+
+### 📍 Navigation & Routing
+
+- Uses the user's current location
+- Calculates routes to selected destinations
+- Displays routes directly on the map
+- Powered by **Leaflet Routing Machine**
+
+### ⭐ Reviews & Ratings
+
+- 1–5 star ratings
+- User comments
+- Place-specific reviews
+- Community-driven location information
+
+### 📸 Place Photos
+
+- Display photos for locations
+- Support for image URLs
+- Helps users visually identify places
+
+### 🎉 Local Events
+
+- Discover local events
+- Dedicated event markers
+- View ongoing and upcoming events
+- Location-based event information
+
+### 📶 Progressive Web App
+
+- Installable on mobile and desktop
+- Service Worker support
+- Static asset caching
+- Improved experience with poor connectivity
+- PWA-ready architecture
+
+### 🌙 Dark Mode
+
+- Modern dark interface
+- Light and dark themes
+- User preference stored locally
+- Responsive design
+
+---
+
+## 🛠️ Technology Stack
 
 ### Frontend
-- **React.js** (via Vite)
-- **Tailwind CSS** (for styling and Dark Mode)
-- **React-Leaflet** & **Leaflet Routing Machine** (for maps and routing)
-- **Lucide React** (Icons)
-- **Vite PWA Plugin** (Progressive Web App support)
+
+| Technology | Purpose |
+|---|---|
+| React.js | User interface |
+| Vite | Development & build tool |
+| Tailwind CSS | Styling |
+| React-Leaflet | Interactive maps |
+| Leaflet Routing Machine | Navigation & routing |
+| Lucide React | Icons |
+| Vite PWA Plugin | PWA functionality |
 
 ### Backend
-- **Node.js** & **Express.js** (REST API)
-- **PostgreSQL** (`pg` driver for database management)
-- **Google Generative AI** (Gemini integration for the AI Assistant)
+
+| Technology | Purpose |
+|---|---|
+| Node.js | Runtime environment |
+| Express.js | REST API |
+| PostgreSQL | Relational database |
+| `pg` | PostgreSQL database driver |
+| Google Gemini | AI assistant |
 
 ---
 
-## 🚀 Getting Started
-
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-You need to have the following installed:
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [PostgreSQL](https://www.postgresql.org/)
-
-### 1. Database Setup
-1. Ensure PostgreSQL is running.
-2. Create a `.env` file inside the `backend/` directory:
-   ```env
-   DB_USER=postgres
-   DB_PASSWORD=your_password
-   DB_HOST=localhost
-   DB_PORT=5432
-   DB_NAME=db_gps
-   PORT=5000
-   GEMINI_API_KEY=your_google_gemini_api_key
-   ```
-3. Initialize and seed the database:
-   ```bash
-   cd backend
-   npm install
-   node initDb.js
-   ```
-
-### 2. Run the Backend Server
-```bash
-cd backend
-npm run dev
-```
-*(Runs on `http://localhost:5000`)*
-
-### 3. Run the Frontend Development Server
-```bash
-cd frontend
-npm install
-npm run dev
-```
-*(Runs on `http://localhost:5173` or similar. Open this in your browser)*
-
----
-
-## 📂 Project Structure
+## 🏗️ System Architecture
 
 ```text
-db_gps/
-├── backend/
-│   ├── routes/          # Express API routes (places, reviews, events, photos, chat)
-│   ├── data/            # JSON seed data
-│   ├── db.js            # PostgreSQL connection pool
-│   ├── initDb.js        # Script to create tables and seed database
-│   └── server.js        # Main backend entry point
-│
-└── frontend/
-    ├── src/
-    │   ├── components/  # React components (MapView, Navbar, RoutingMachine, Modals)
-    │   ├── context/     # React Contexts (ThemeContext for Dark Mode)
-    │   ├── App.jsx      # Main application logic
-    │   └── main.jsx     # Vite entry point
-    ├── tailwind.config.js
-    └── vite.config.js   # Vite + PWA config
-```
-
-## 📝 License
-
-This project is open-source and available under the [ISC License](LICENSE).
+                         ┌─────────────────────┐
+                         │       User          │
+                         │  Mobile / Desktop   │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+                         ┌─────────────────────┐
+                         │   React Frontend    │
+                         │      + Vite         │
+                         └──────────┬──────────┘
+                                    │
+                ┌───────────────────┼───────────────────┐
+                │                   │                   │
+                ▼                   ▼                   ▼
+        ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
+        │ Interactive  │    │   Routing    │    │  AI Assistant│
+        │     Map      │    │   Service    │    │    Gemini    │
+        └──────────────┘    └──────────────┘    └──────┬───────┘
+                                                       │
+                                                       ▼
+                                             ┌─────────────────┐
+                                             │  Express REST   │
+                                             │       API       │
+                                             └────────┬────────┘
+                                                      │
+                                                      ▼
+                                             ┌─────────────────┐
+                                             │   PostgreSQL    │
+                                             │     Database    │
+                                             └─────────────────┘
