@@ -12,9 +12,15 @@ app.use(express.json());
 // Routes
 const placesRoutes = require('./routes/places');
 const chatRoutes = require('./routes/chat');
+const reviewsRoutes = require('./routes/reviews');
+const photosRoutes = require('./routes/photos');
+const eventsRoutes = require('./routes/events');
 
 app.use('/api/places', placesRoutes);
 app.use('/api/chat', chatRoutes);
+app.use('/api/reviews', reviewsRoutes);
+app.use('/api/photos', photosRoutes);
+app.use('/api/events', eventsRoutes);
 
 // Basic health check
 app.get('/api/health', (req, res) => {
